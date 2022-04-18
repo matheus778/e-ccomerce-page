@@ -1,0 +1,257 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+/* variveris */
+:root{
+  font-size: 16px;
+  --primary: hsl(26, 100%, 55%);
+  --primary-pale: hsl(25, 100%, 94%);
+
+  --dark: hsl(220, 13%, 13%);
+  --grayish: hsl(219, 9%, 45%);
+  --neutral: hsl(220, 14%, 75%);
+  --light: hsl(223, 64%, 98%);
+  --white: hsl(0, 0%, 100%);
+  --black : hsl(0, 0%, 0%);
+}
+
+body{
+  height: 100vh;
+  font-family: 'Kumbh Sans', sans-serif
+}
+
+/* navbar */
+.navbar-container{
+  width: 100%;
+}
+
+.navbar-content{
+  max-width: 1200px;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--neutral);
+}
+
+.logo-container{
+  display: flex;
+  justify-content: space-between;
+  gap: 3rem;
+  /* position: relative; */
+  z-index: 1;
+}
+
+.menu{
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+.menu li{
+  list-style: none;
+}
+
+.menu li a{
+  text-decoration: none;
+  color: var(--grayish);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: 500ms;
+}
+
+.menu li a:hover{
+  color: var(--primary);
+}
+
+.shoopcart-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.shoopcart-container span{
+  cursor: pointer;
+  transition: 300ms;
+}
+
+.shoopcart-container span:hover{
+  opacity: 0.8;
+}
+
+.profile-pic img{
+  width: 45px;
+}
+
+.profile-pic{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  transition: 300ms;
+}
+
+.profile-pic:hover{
+  border: 2px solid var(--primary);
+}
+
+.cart-container{
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  background-color: var(--white);
+  top: 80px;
+  right: 0;
+  margin: 0 auto;
+  width:fit-content;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.37);
+  border-radius: 5px;
+  transition: 500ms;
+}
+
+.cart-content{
+  padding-bottom: 1rem;
+}
+
+.cart-title{
+  padding: 1rem 1rem;
+  border-bottom: 1px solid var(--neutral);
+  margin-bottom: 1rem;
+}
+
+.cart-title h2{
+  font-size: 1.1rem;
+}
+
+.cart-items{
+  padding: 1rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cart-items > img:first-child{
+  width: 60px;
+  box-shadow: -5px 6px 15px -9px rgba(0,0,0,0.75);
+
+  border-radius: 5px;
+}
+
+.cart-items p{
+  font-size: 1rem;
+  color: var(--grayish);
+}
+
+.cart-items p strong{
+  color: black;
+}
+
+.cart-items > span img{
+  width: 15px;
+}
+
+#btn-checkout{
+  font-weight: bold;
+  margin: 0 auto;
+  width: 90%;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  padding: 1rem 0;
+  border-radius: 5px;
+  background-color: var(--primary);
+  margin-bottom: 2rem;
+  box-shadow: -5px 6px 10px -9px rgba(0,0,0,0.75);
+  transition: opacity 300ms;
+}
+
+#btn-checkout:hover{
+  opacity: 0.6;
+}
+
+.show{
+  visibility: visible;
+  opacity: 1;
+}
+
+/* menu hamburger */
+#menu-hamburger{
+  visibility: hidden;
+  display: none;
+  cursor: pointer;
+  transition: 300ms;
+}
+
+#menu-hamburger img{
+  width: 20px;
+}
+
+#menu-hamburger:hover{
+  opacity: 0.6;
+}
+
+@media(max-width: 890px){
+
+  .menu{
+    opacity: 0;
+    padding-top: 2rem;
+    padding-left: 1rem;
+    flex-direction: column;
+    height: 100vh;
+    width: 50vw;
+    position: absolute;
+    top: 0;
+    left: -100vw;
+    z-index: 2;
+    background-color: var(--primary);
+    justify-content: start;
+    transition: 800ms;
+  }
+
+  .menu li a{
+    color: var(--white);
+  }
+
+
+  #menu-hamburger{
+    display: inherit;
+    visibility: visible;
+  }
+
+  .menu-ajust{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .navbar-content{
+    padding: 0.5rem 1rem;
+    height: fit-content;
+  }
+
+  .cart-container{
+    width: 90%;
+    left: 0;
+  }
+}
+
+.show-menu{
+  display: flex;
+  opacity: 1;
+  left: 0;
+}
+
+/* main */
